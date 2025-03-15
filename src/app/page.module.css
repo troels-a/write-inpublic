@@ -30,66 +30,87 @@
 .main {
   display: flex;
   flex-direction: column;
-  gap: 32px;
-  grid-row-start: 2;
+  align-items: center;
+  min-height: 100vh;
+  background-color: white;
 }
 
-.main ol {
-  font-family: var(--font-geist-mono);
-  padding-left: 0;
-  margin: 0;
-  font-size: 14px;
-  line-height: 24px;
-  letter-spacing: -0.01em;
-  list-style-position: inside;
-}
-
-.main li:not(:last-of-type) {
-  margin-bottom: 8px;
-}
-
-.main code {
-  font-family: inherit;
-  background: var(--gray-alpha-100);
-  padding: 2px 4px;
-  border-radius: 4px;
-  font-weight: 600;
-}
-
-.ctas {
+.container {
+  width: 100%;
+  max-width: 800px;
   display: flex;
-  gap: 16px;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
 }
 
-.ctas a {
-  appearance: none;
-  border-radius: 128px;
-  height: 48px;
-  padding: 0 20px;
+.title {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.textarea {
+  width: 100%;
+  padding: 2rem;
+  font-size: 1.5rem;
   border: none;
-  border: 1px solid transparent;
-  transition:
-    background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+  resize: none;
+  overflow: hidden;
+  min-height: 100px;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  background-color: white;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.textarea::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.textarea:focus {
+  outline: none;
+}
+
+.download {
+  text-transform: uppercase;
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  background-color: transparent;
+  color: black;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
+  transition: opacity 0.2s;
+  opacity: 0.9;
+  align-self: center;
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 500;
+  gap: 0.5rem;
 }
 
-a.primary {
-  background: var(--foreground);
-  color: var(--background);
-  gap: 8px;
+.download::before,
+.download::after {
+  content: '↓';
+  color: black;
+  font-size: 1.2rem;
 }
 
-a.secondary {
-  border-color: var(--gray-alpha-200);
-  min-width: 158px;
+.download::before {
+  top: -1.5rem;
+}
+
+.download::after {
+  bottom: -1.5rem;
+}
+
+.download:hover {
+  opacity: 1;
 }
 
 .footer {
@@ -133,7 +154,7 @@ a.secondary {
   }
 
   .main {
-    align-items: center;
+    padding: 1rem;
   }
 
   .main ol {
@@ -158,6 +179,16 @@ a.secondary {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .textarea {
+    font-size: 1.2rem;
+    padding: 1.5rem;
+    min-height: 80px;
   }
 }
 
